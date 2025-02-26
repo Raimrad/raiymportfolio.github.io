@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный сайт-Rayim</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Rubik Mono One' rel='stylesheet'>
+    <style>
+        .adrd {
+            font-family: 'Rubik Mono One';
+            font-size: 22px;
+        }
+
+
+        .hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navcl hidden">
+            <h1 id="raim" class="adrd">Raim</h1>
+            <ul>
+                <li><a href="#about">Мен туралы</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <section class="hero hidden">
+            <h2 class="adrd">Adilbek Raiymbek</h2>
+            <p>Бұл сайтта мен туралы көптеген ақпараттар біле аласыздар.</p>
+            <a href="#portfolio" class="btn">Жұмыстарымды қарау</a>
+        </section>
+    </header>
+
+    <main>
+        <div class="conteinr hidden">
+            <img class="secim" src="img/03c20eec-af6c-4c61-b2a9-1189b58a68bc.jpeg" alt="">
+            <section id="about" class="about hidden">
+                <h2>Мен туралы</h2>
+                <p>Сәлем! Менің аты-жөнім Адилбек Райымбек. Қазіргі уақытта веб-разработкамен айналысып, халықаралық олимпиадаларға қатысып, ерекше әрі бірегей жобалар жасаудамын. 8-9 сынып аралығында Математикадан олимпиадалық резервте болып Халықаралық Моңғоия елінде өткен олимпиадаға қатыстым. Сонымен қатар, мен қазіргі уақытта Интернаттың төрағасымын және осы төрағалық лауазымымда мен 7-11 сынып аралығында көптеген іс-шаралар ұйымдастырудамын.</p>
+            </section>
+        </div>
+
+        <section id="portfolio" class="portfolio hidden">
+            <div class="portfolio-items">
+                <div class="item hidden">
+                    <a href="https://raimrad.github.io/">
+                        <img class="firstp" src="https://static.tildacdn.pro/tild3732-6639-4538-a237-396339333330/IMG_20181019_113843_.jpg" alt="Project 1">
+                    </a>
+                    <h3>Қазақстан бойынша саяхат</h3>
+                    <p>Менің ең бірінші веб-сайтым. Бұл веб-сайт Қазақсатанға келген туристтарға арналған.</p>
+                </div>
+
+                <div class="item hidden">
+                    <img class="ttt" src="img/Изображение WhatsApp 2025-02-26 в 15.48.05_c02d6729.jpg" alt="Project 2">
+                    <h3>Интернаттың Төрағасы</h3>
+                    <p>Мен жылдың шы қыркүйегінде РФММ Интернатының Төрағасы атандым. Осы 3 тоқсанда мен көптеген жарыстар ұйымдастырдым.</p>
+                </div>
+
+                <div class="item hidden">
+                    <img class="ttt" src="https://avanti-edu.tech/upload/images/article/UzUhK6L9tFOP3Ri.jpg" alt="Project 3">
+                    <h3>Болашақ мамандығым: Инженер</h3>
+                    <p>Мен болашақта Инженер-робототехник боламын деп отырмын.</p>
+                </div>
+            </div>
+
+            <div class="sums hidden">
+                <h1>Тарихта қандай із қалдырғым келеді?</h1>
+                <p>Мен инженерлік салада әлемді өзгертетін құрылғы ойлап тапқым келеді.</p>
+            </div>
+        </section>
+
+        <footer id="contact" class="fooot hidden">
+            <div class="container-fluid rap">
+                <h1 class="nav-name1">RAIM</h1>
+                <h5 class="ddd">Сұрақтар бар болса:</h5>
+                <div id="cont">
+                    <h5 class="ph">📞 +7 700 231 2008</h5>
+                    <a href="https://www.instagram.com/direct/t/117260009661167/">
+                        <img class="sm" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/768px-Instagram_icon.png" alt="error">
+                        <h5 class="ph">Instagram</h5>
+                    </a>
+                    <a href="https://wa.me/+77767555193">
+                        <img class="sm" src="https://pngicon.ru/file/uploads/whatsapp.png" alt="error">
+                        <h5 class="ph">WhatsApp</h5>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            const hiddenElements = document.querySelectorAll('.hidden');
+            hiddenElements.forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
